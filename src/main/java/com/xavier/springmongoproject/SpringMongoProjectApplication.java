@@ -17,18 +17,18 @@ public class SpringMongoProjectApplication {
 	}
 
 
-	@Bean
-	public CommandLineRunner commandLineRunner(
-			CategoryRepository repository
-	){
-		return args -> {
-			var product = Category.builder()
-					.name("phones")
-					.build();
-			repository.insert(product);
-		};
-
-	}
+//	@Bean
+//	public CommandLineRunner commandLineRunner(
+//			CategoryRepository repository
+//	){
+//		return args -> {
+//			var product = Category.builder()
+//					.name("phones")
+//					.build();
+//			repository.insert(product);
+//		};
+//
+//	}
 
 
 

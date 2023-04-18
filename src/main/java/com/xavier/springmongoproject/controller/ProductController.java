@@ -1,7 +1,7 @@
 package com.xavier.springmongoproject.controller;
 
-import com.xavier.springmongoproject.domain.product.Product;
-import com.xavier.springmongoproject.service.ProductService;
+import com.xavier.springmongoproject.dto.model.product.ProductDto;
+import com.xavier.springmongoproject.service.product.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,17 +16,17 @@ public class ProductController {
 
 
     @PostMapping
-    public ResponseEntity<String> save(@RequestBody Product product) {
+    public ResponseEntity<String> save(@RequestBody ProductDto product) {
         return ResponseEntity.ok(service.save(product));
     }
 
     @GetMapping
-    public ResponseEntity<List<Product>> getAll() {
+    public ResponseEntity<List<ProductDto>> getAll() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/{product_id}")
-    public ResponseEntity<Product> findById(@PathVariable("product_id") String id) {
+    public ResponseEntity<ProductDto> findById(@PathVariable("product_id") String id) {
         return ResponseEntity.ok(service.findById(id));
     }
 
